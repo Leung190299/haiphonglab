@@ -1,0 +1,25 @@
+/*!
+ * Theme Name:   Hai Phong Lab
+ * Theme URI:    https: //github.com/Leung190299
+ * Author:       Leung
+ * Author URI:   https: //github.com/Leung190299
+ * Description:  The theme for Hai Phong Lab website.
+ * Version:      1.0.0
+ * Text Domain:  hpl
+ *
+ */
+
+@import "variables";
+
+@import "base/element";
+@import "base/accessibility";
+
+@import "components/layout";
+@import "components/header";
+@import "components/footer";
+@import "components/archive";
+@import "components/single";
+
+@import "components/chien-dich";
+@import "components/mang-luoi-kh";
+@import "components/form-case";
