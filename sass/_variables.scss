@@ -1,22 +1,13 @@
-:root {
-	--container: 1000px;
-	--font-inter: 'Inter', sans-serif;
-	--font-roboto: 'Roboto', sans-serif;
-	--font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$primary:#1189ca;
+$secondary:#333;
+$light:#fff;
+$bgLight:#f0f4ff;
 
-	--color-text: #4F4F4F;
-	--color-text-light: #828282;
-	--color-title-mini: #333333;
-	--color-title: #001F4C;
-	--color-bg: #F8FBFF;
+$colorText:$secondary;
+$colorTextLine:$light;
 
-	--color-blue: #0061C1;
-	--color-white: #fff;
+$fontTheme: 'Open Sans',sans-serif;
 
-	// --color-bg-2: #eceff4;
-	// --color-line: #eceff4;
-	// --color-link: #bf616a;
-	// --color-btn-bg: #242933;
-	// --color-btn-txt: #fff;
-	// --color-focus: #88c0d0;
-}
+$fontSize:1rem;
+
+$container:1330px;

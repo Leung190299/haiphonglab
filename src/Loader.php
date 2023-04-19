@@ -16,7 +16,7 @@ class Loader
 		load_theme_textdomain('hpl', get_template_directory() . '/languages');
 
 		register_nav_menus([
-			'menu-1' 		=>  esc_html__('Primary Menu', 'hpl'),
+			'menu' 		=>  esc_html__('Primary Menu', 'hpl'),
 			'menu-mobile' 	=>  esc_html__('Menu Mobile', 'hpl'),
 		]);
 

@@ -13,6 +13,13 @@
     <?php wp_body_open(); ?>
 
     <!-- nội dung header -->
-   
+    <?php wp_nav_menu(
+        [
+            'theme_location' => 'menu',
+            'container' => 'false',
+            'menu_id' => 'header-menu',
+            'menu_class' => 'menu'
+        ]
+    ); ?>
 
     <main class="main" role="main">
