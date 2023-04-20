@@ -1,0 +1,106 @@
+.header {
+    position: relative;
+
+    svg {
+        height: 100%;
+        width: 100%;
+    }
+
+    &_top {
+        background: $light;
+    }
+
+    &_bottom {
+        @include bg-gradien(90);
+    }
+
+    &_body {
+        padding: $padding 0;
+        display: flex;
+        justify-content: space-between;
+    }
+    &_logo{
+        max-width:300px ;
+    }
+
+    &_menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &_menuBody {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+    }
+
+    .menu-item a {
+        display: block;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 24px;
+        padding: 10px 20px;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: .5s;
+        color: $colorText;
+
+        &:hover {
+            color: $primary !important;
+        }
+    }
+
+    &_search {
+        padding: 5px 0;
+
+        button {
+            border-left: 1px solid #e6e6e6;
+            border-radius: 0;
+            width: 45px;
+            height: 35px;
+            padding: 5px;
+
+            svg {
+                fill: #00b81c !important;
+            }
+        }
+
+        &:hover {
+            svg {
+                fill: $primary !important;
+            }
+        }
+    }
+
+    &_boxItem{
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+        width: 100%;
+    }
+    &_item{
+        margin: 0;
+        padding: 0%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+        color: $light;
+        font-weight: bold;
+            text-transform: uppercase;
+    }
+    &_itemIcon{
+        width: 25px;
+        height: 25px;
+        margin-right:10px ;
+        svg{
+            fill: $light;
+        }
+    }
+        &_itemTitle{
+            font-size: calc($fontSize - 2px);
+        }
+}
