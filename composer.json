@@ -1,0 +1,17 @@
+{
+    "name": "leung/haiphonglab",
+    "description": "theme wp",
+    "type": "them",
+    "autoload": {
+        "psr-4": {
+            "HPlab\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "leung",
+            "email": "leung01628381807@gmail.com"
+        }
+    ],
+    "require": {}
+}

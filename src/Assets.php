@@ -1,5 +1,5 @@
 <?php
-namespace Sol;
+namespace HPlab;
 
 class Assets {
 	public static function css( $name ) {

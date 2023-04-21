@@ -1,5 +1,6 @@
 <?php
 
+
 class Template_function {
 
 	public static function getImage( $name ) {       ?>

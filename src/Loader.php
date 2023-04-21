@@ -1,6 +1,6 @@
 <?php
 
-namespace Sol;
+namespace HPlab;
 
 class Loader
 {
@@ -33,7 +33,7 @@ class Loader
 	{
 		register_sidebar(
 			[
-				'name'          => esc_html__('tên sidebar', 'hpl'),
+				'name'          => esc_html__('footer', 'hpl'),
 				'id'            => 'sidebar-1',
 				'before_widget' => '<aside class="widget %2$s">',
 				'after_widget'  => '</aside>',
