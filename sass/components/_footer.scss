@@ -1,109 +1,162 @@
 .footer {
-	border-top: 1px solid #DFDFDF;
-	border-bottom: 1px solid #DFDFDF;
+	position: relative;
+	margin-top: 15px;
+	background: url('./images/bgft.png');
+	background-size: cover;
+	background-position: center;
 
-	&__inner {
+	&_info {
+		@include bg-gradien(90)
+	}
+
+	&_infoBox {
 		display: flex;
-		justify-content: space-between;
-		flex-wrap: wrap;
+		padding: 20px 0;
 	}
 
-	&__item {
-		padding: 24px 0 40px;
+	&_infoItem {
+		flex: 1;
+		display: flex;
+		align-items: center;
+	}
 
-		h3 {
-			position: relative;
-			margin: 0;
-			margin-bottom: 29px;
-			padding-bottom: 16px;
-			font-size: 16px;
-			line-height: 1.2;
-			font-weight: 600;
-			color: var(--color-title);
+	&_infoIcon {
+		width: 30px;
+		height: 30px;
+		margin-right: 15px;
 
-			&::after {
-				content: '';
-				display: block;
-				width: 22px;
-				height: 2px;
-				background: var(--color-blue);
-				position: absolute;
-				bottom: 0;
-			}
+		img {
+			filter: invert(1);
 		}
 	}
 
-	&__ketnoi {
-		width: 34%;
+	&_infoContent {
+		display: block;
+		color: $colorTextLine;
+		line-height: 22px;
 	}
 
-	&__content {
-		ul {
-			list-style: none;
-			padding: 0;
-			margin: 0;
-		}
+	&_infoTitel {
+		margin: 0;
+		font-weight: 400;
+		font-size: calc($fontSize - 2px);
+
+
+	}
+
+	&_infoValue {
+		margin: 0;
+		font-size: $fontSize;
+		font-weight: bold;
+	}
+
+	&_body {
+		position: relative;
+
+		padding: 40px 0;
+
+	}
+
+	&_bodyBox {
+		display: flex;
+		min-height: 200px;
+	}
+
+	&_item {
+		flex: 1;
+		padding: 0 10px;
+
+	}
+
+	&_itemTitle {
+		text-transform: uppercase;
+		margin-bottom: 20px;
+		font-weight: bold;
+		color: $primary;
+		font-size: 18px;
+		line-height: 27px;
+		padding-bottom: 5px;
+		border-bottom: 1px solid #e2e3e4;
+		position: relative;
+		padding-right: 20px;
+	}
+
+	&_list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
 
 		li {
-			padding-bottom: 16px;
-			font-size: 14px;
-			font-weight: 400;
-			color: var(--color-text-light);
-		}
+			margin-bottom: 5px;
+			display: flex;
+			align-items: center;
 
-		li a {
-			color: var(--color-text-light);
+			&::before {
+				content: '';
+				border: 5px solid $colorText;
+				border-left-color: transparent;
+				border-top-color: transparent;
+				border-radius: 2px;
+				transform: rotate(-45deg);
+
+			}
 
 			&:hover {
-				color: var(--color-blue);
+				a {
+					color: $primary;
+					margin-left: 15px;
+				}
+
+				&::before {
+					border-color: $primary;
+					border-left-color: transparent;
+					border-top-color: transparent;
+				}
 			}
 		}
+
+		a {
+			position: relative;
+			font-weight: 400;
+			margin-left: 10px;
+			color: $colorText;
+			font-size: calc($fontSize - 2px);
+			transition: all .5s;
+
+		}
 	}
 
-	&__partner {
+	&_contact {
+		background-color: $light;
+		position: relative;
+		padding: 30px 0;
+		font-weight: 400;
+		font-size: calc($fontSize - 2px );
+		border-top: 1px solid #f0e3f0;
+		border-bottom: 1px solid #f0e3f0;
+
+	}
+	&_contactBox{
 		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-wrap: wrap;
-		padding-bottom: 40px;
-		column-gap: 35px;
-		row-gap: 20px;
 	}
-
-}
-
-.copyright {
-	color: #979797;
-	font-size: 12px;
-	font-weight: 400;
-	padding: 16px 0 20px;
-}
-
-@media all and (max-width: 991px) {
-	.footer__ketnoi {
-		width: 50%;
+	&_contactContent,&_contactMap{
+		flex: 1;
 	}
-}
-
-@media all and (max-width: 767px) {
-	.footer {
-		&__item {
-			padding-bottom: 0;
-			width: 50%;
-		}
-
-		&__novanet,
-		&__sanphamkhac {
-			padding-left: 30px;
-		}
-
-		&__ketnoi {
+	&_contactMap{
+		iframe{
 			width: 100%;
+			height: 200px;
+			margin: 0;
 		}
-
-		&__partner {
-			gap: 35px;
-			justify-content: center;
-		}
+	}
+}
+.copyright{
+padding: 20px 0;
+    font-weight: 400;
+    position: relative;
+	font-size: 12px;
+    z-index: 1;
+	P{
+		margin: 0;
 	}
 }
