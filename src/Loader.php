@@ -43,6 +43,7 @@ class Loader
 		);
 	}
 
+
 	public function enqueue_assets()
 	{
 		wp_enqueue_style('novanet-theme', get_stylesheet_uri(), [], filemtime(get_template_directory() . '/style.css'));
@@ -51,14 +52,18 @@ class Loader
 		wp_enqueue_style( 'magnific-popup', get_template_directory_uri() . '/css/magnific-popup.min.css', [], '1.1.0' );
 		wp_enqueue_script( 'magnific-popup', get_template_directory_uri() . '/js/jquery.magnific-popup.min.js', [ 'jquery' ], '1.1.0', true );
 
-		wp_enqueue_style( 'slick', get_template_directory_uri() . '/css/slick.css', [], '1.8.1' );
-		wp_enqueue_script( 'slick', get_template_directory_uri() . '/js/slick.js', [ 'jquery' ], '1.8.1', true );
+		// wp_enqueue_style( 'slick', get_template_directory_uri() . '/css/slick.css', [], '1.8.1' );
+		// wp_enqueue_script( 'slick', get_template_directory_uri() . '/js/slick.js', [ 'jquery' ], '1.8.1', true );
 
 		wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js', [ 'jquery' ], '1.0', true );
 		wp_enqueue_script('wow', 'https://cdn.jsdelivr.net/npm/wowjs@1.1.3/dist/wow.min.js', [], '1.1.3', true);
 
 		//Thêm style cho template
-		Assets::template_css( 'page-templates/home-page.php', 'home-page' );
+		Assets::template_css( 'page-templates/home-page.php', 'home' );
+		Assets::template_css('page-templates/home-page.php','slick');
+		Assets::template_js('page-templates/home-page.php','slick',['jquery']);
+
+
 
 		// Assets::template_js([
 		// 	'page-templates/home-template.php',

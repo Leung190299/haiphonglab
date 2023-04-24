@@ -14,3 +14,28 @@
 
 	}
 }
+
+.slick-dots {
+    text-align: center;
+    bottom: 30px !important;
+	li {
+		display: inline-block;
+		margin: 0 5px !important;
+		width: 10px !important;
+		&.slick-active{
+			button{
+				background: $primary !important;
+			}
+		}
+	}
+	button{
+		width: 10px !important;
+		height: 10px !important;
+		border: 2px solid $primary !important;
+		background-color: transparent !important;
+		border-radius: 100%;
+		font-size: 0;
+		padding: 0 !important;
+	}
+
+}
