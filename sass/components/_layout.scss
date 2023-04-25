@@ -4,10 +4,11 @@
 	margin: 0 auto;
 }
 
-.entry-thumbnail{
+.entry-thumbnail {
 	width: 100%;
 	height: 100%;
-	img{
+
+	img {
 		width: 100%;
 		height: 100%;
 		object-fit: contain;
@@ -16,19 +17,22 @@
 }
 
 .slick-dots {
-    text-align: center;
-    bottom: 30px !important;
+	text-align: center;
+	bottom: 30px !important;
+
 	li {
 		display: inline-block;
 		margin: 0 5px !important;
 		width: 10px !important;
-		&.slick-active{
-			button{
+
+		&.slick-active {
+			button {
 				background: $primary !important;
 			}
 		}
 	}
-	button{
+
+	button {
 		width: 10px !important;
 		height: 10px !important;
 		border: 2px solid $primary !important;
@@ -38,4 +42,153 @@
 		padding: 0 !important;
 	}
 
+}
+
+.label {
+	font-size: calc(2 * $fontSize - 4px);
+	line-height: 1;
+	position: relative;
+	padding-left: 15px;
+	text-transform: uppercase;
+	border-left: $primary solid 3px;
+	margin: 0;
+}
+
+.form {
+	background: $light;
+	position: relative;
+	z-index: 1;
+	box-shadow: 0 0 10px 0 rgba(18, 138, 202, 0.2);
+	margin-bottom: 20px;
+	padding: 25px;
+	font-weight: 400;
+	font-size: 15px;
+	margin-top: 1rem;
+	display: flex;
+	gap: 1rem;
+
+	&>* {
+		flex: 1;
+	}
+
+	&-group {
+		margin-bottom: 1rem;
+	}
+
+	label {
+		display: inline-block;
+		max-width: 100%;
+		margin-bottom: $fontSize;
+		font-weight: 700;
+	}
+
+
+}
+
+input {
+	background-color: #f0f4ff !important;
+	padding: 10px;
+	color: #333333;
+	border-radius: 0;
+}
+
+.btn {
+	@include bg-gradien(90);
+	color: #fff !important;
+	position: relative;
+	z-index: 1;
+	border-radius: 0;
+	font-weight: bold;
+	text-transform: uppercase;
+	width: 100%;
+	padding: 10px 6px;
+
+	&::before {
+		position: absolute;
+		width: 0%;
+		height: 100%;
+		background: $primary;
+		content: '';
+		top: 0;
+		left: 0;
+		z-index: -1;
+		transition: all .5s;
+
+	}
+
+	&:hover {
+		color: #fff;
+		opacity: 1;
+
+		&::before {
+			width: 100%;
+		}
+	}
+}
+
+.form_setTest {
+	@include bg-gradien(90);
+	position: relative;
+	padding: 40px 20px 20px 20px;
+	font-weight: 400;
+	position: relative;
+	z-index: 1;
+	margin-top: 1rem;
+	overflow: hidden;
+
+	&::before {
+		content: '';
+		z-index: -1;
+		opacity: .3;
+		@include iconBg(0%, 20%, 200px, 200px ,url('./images/bgicon.png'));
+	}
+
+	.form_text {
+		margin: 0;
+		font-size: 20px;
+		line-height: 30px;
+		margin-bottom: 10px !important;
+		padding: 0;
+		color: $light;
+
+		p {
+			margin: 0;
+		}
+	}
+
+	.fluentform .ff-el-form-control {
+		background-color: #f0f4ff !important;
+		color: #333333;
+		border-radius: 0;
+	}
+
+	.fluentform .ff-btn-submit {
+		width: 100%;
+		height: 40px;
+		text-align: center;
+		background-color: transparent;
+		border: 1px solid #fff;
+		text-transform: uppercase;
+		font-weight: bold;
+		-webkit-transition: all 0.3s linear;
+		-o-transition: all 0.3s linear;
+		transition: all 0.3s linear;
+		font-size: 15px;
+		display: block;
+		&:hover{
+			background: $light;
+			color: $primary;
+		}
+	}
+}
+
+
+@keyframes rotate {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
 }

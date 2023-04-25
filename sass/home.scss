@@ -1,5 +1,40 @@
-.homeBanner{
-	&_item{
+@import "components/mixin";
+
+.homeBanner {
+	&_item {
 		min-height: 71vh;
+	}
+}
+
+.getTest {
+	background: #f0f4ff;
+	padding: 50px 0;
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+	&::after {
+		content: '';
+		z-index: -1;
+
+		@include iconBg(5%, 0%, 300px, 300px,url('../images/bgicon.png'));
+	}
+
+	&::before {
+		content: '';
+		z-index: -1;
+		@include iconBg(40%, 60%, 300px, 300px,url('../images/bgicon.png'));
+	}
+
+	&_box {
+		display: flex;
+		gap: 1rem;
+	}
+
+	&_left {
+		flex: 3;
+	}
+
+	&_right {
+		flex: 1;
 	}
 }

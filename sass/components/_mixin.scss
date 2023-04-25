@@ -2,3 +2,18 @@
 @mixin bg-gradien($deg){
     background: linear-gradient(#{$deg}deg, rgba(17, 137, 202, 1) 0%, rgba(53, 193, 182, 1) 100%);
 }
+@mixin iconBg($top,$left,$width, $height,$link ){
+    position: absolute;
+    top: $top;
+    left: $left;
+    height: $height;
+    width:$width;
+    background: $link no-repeat;
+    background-size: contain;
+    background-position: center;
+    animation: rotate 40s linear  infinite;
+    -webkit-animation: rotate 40s linear  infinite;
+    -moz-animation: rotate 40s linear infinite;
+	-o-animation: rotate 40s linear infinite;
+
+}
