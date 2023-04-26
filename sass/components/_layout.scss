@@ -43,6 +43,31 @@
 	}
 
 }
+.slick-arrow{
+	position: absolute;
+	background: $bgLight;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	top: 50%;
+	transform: translateY(-50%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 14px;
+	box-shadow: 0 0 5px 0 rgba(0,0,0,.3);
+	z-index: 11;
+	cursor: pointer;
+	&:hover{
+		background: #f0f4ffca;
+	}
+}
+.nextArrow{
+	right: 0;
+}
+.prevArrow{
+	left: 0;
+}
 
 .label {
 	font-size: calc(2 * $fontSize - 4px);

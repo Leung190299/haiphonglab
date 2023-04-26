@@ -1,3 +1,4 @@
+@import "variables";
 @import "components/mixin";
 
 .homeBanner {
@@ -12,17 +13,18 @@
 	position: relative;
 	z-index: 1;
 	overflow: hidden;
+
 	&::after {
 		content: '';
 		z-index: -1;
 
-		@include iconBg(5%, 0%, 300px, 300px,url('../images/bgicon.png'));
+		@include iconBg(5%, 0%, 300px, 300px, url('../images/bgicon.png'));
 	}
 
 	&::before {
 		content: '';
 		z-index: -1;
-		@include iconBg(40%, 60%, 300px, 300px,url('../images/bgicon.png'));
+		@include iconBg(40%, 60%, 300px, 300px, url('../images/bgicon.png'));
 	}
 
 	&_box {
@@ -36,5 +38,120 @@
 
 	&_right {
 		flex: 1;
+	}
+}
+
+.homeService {
+	padding: 50px 0;
+
+	&_label {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		a {
+			color: $primary;
+			text-decoration: underline;
+			font-weight: bold;
+		}
+	}
+
+	&_body {
+		margin-top: 20px;
+	}
+}
+
+.service {
+	padding: 0 10px;
+	position: relative;
+
+	&_image {
+		position: relative;
+
+		a {
+			display: block;
+			overflow: hidden;
+			padding-top: 65%;
+			position: relative;
+		}
+
+		img {
+			object-fit: cover;
+			position: absolute;
+			inset: 0;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+	}
+
+	&_title {
+		padding: 20px;
+		background: $bgLight;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		color: $primary;
+
+		a {
+			color: $primary;
+			font-weight: bold;
+			text-transform: uppercase;
+			font-size: $fontSize;
+
+			width: 100%;
+		}
+	}
+
+	&_link {
+		display: flex;
+		position: absolute;
+		justify-content: center;
+		align-items: center;
+		right: 6%;
+		bottom: 10%;
+		width: 54px;
+		height: 54px;
+		overflow: hidden;
+		@include bg-gradien(90);
+		border-radius: 50px;
+		padding: 5px $fontSize;
+		transition: all .5s;
+
+		svg {
+			width: 50px;
+			height: 50px;
+			fill: $light !important;
+			position: absolute;
+			transition: all .5s;
+			top: 50%;
+			right: 2px;
+			transform: translateY(-50%);
+		}
+
+		span {
+			opacity: 0;
+			color: $light;
+			transition: all .5s;
+			margin-right: 30px;
+			white-space: nowrap;
+			text-transform: uppercase;
+			font-family: 'Roboto ';
+			font-weight: 400;
+
+		}
+
+		&:hover {
+			width: 160px;
+
+			span {
+				opacity: 1;
+			}
+
+			svg {
+				transform: translateY(-50%) rotate(180deg);
+			}
+		}
 	}
 }
