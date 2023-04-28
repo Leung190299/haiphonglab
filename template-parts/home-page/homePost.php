@@ -1,13 +1,13 @@
 <section class="section">
 	<div class="container">
 			<div class="section_label">
-				<h2 class="label">DỊCH VỤ CUNG CẤP</h2>
+				<h2 class="label">KIẾN THỨC Y KHOA</h2>
 				<a href="<?= home_url('/') ?>">Xem tất cả</a>
 			</div>
-		<div class="homeService_body section_body">
+		<div class="homePost_body section_body">
 			<?php
 			$args = [
-				'category_name' => 'dich-vu',
+				'category_name' => 'kien-thuc-y-khoa',
 				'posts_per_page' => 5,
 				'page' => get_query_var('page')
 			];
@@ -17,7 +17,7 @@
 			// The Loop
 			if ($the_query->have_posts()) :
 				while ($the_query->have_posts()) : $the_query->the_post();
-					get_template_part('template-parts/service');
+					get_template_part('template-parts/postContent');
 				endwhile;
 			endif;
 

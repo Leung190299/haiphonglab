@@ -41,7 +41,7 @@
 	}
 }
 
-.homeService {
+.section {
 	padding: 50px 0;
 
 	&_label {
@@ -61,10 +61,16 @@
 	}
 }
 
+
+
 .service {
 	padding: 0 10px;
 	position: relative;
-
+	&:hover{
+		img{
+			transform: scale(1.2);
+		}
+	}
 	&_image {
 		position: relative;
 
@@ -83,6 +89,7 @@
 			left: 0;
 			right: 0;
 			bottom: 0;
+			transition: all .5s;
 		}
 	}
 
@@ -153,5 +160,86 @@
 				transform: translateY(-50%) rotate(180deg);
 			}
 		}
+	}
+}
+
+.postContent {
+	padding: 0 10px;
+	&:hover{
+		img{
+			transform: scale(1.2);
+		}
+	}
+	&_image {
+		position: relative;
+
+		a {
+			display: block;
+			overflow: hidden;
+			padding-top: 65%;
+			position: relative;
+		}
+
+		img {
+			object-fit: cover;
+			position: absolute;
+			inset: 0;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			transition: all .5s
+		}
+	}
+
+	&_date {
+		@include bg-gradien(90);
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		color: $light;
+		padding: 5px 15px 5px 15px;
+		font-size: calc($fontSize - 2px);
+		display: flex;
+		align-items: center;
+
+		svg {
+			width: 30px;
+			height: 30px;
+			fill: $light;
+		}
+	}
+
+	&_title {
+		margin-top: 20px;
+
+		a {
+			font-weight: bold;
+			line-height: 24px;
+			font-size: 16px;
+			height: 48px;
+			overflow: hidden;
+			height: 100%;
+			text-transform: uppercase;
+			margin-bottom: 10px;
+			color: $primary;
+			display: block;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+
+	}
+
+	&_dec {
+		color: #666666;
+		font-weight: 400;
+		overflow: hidden;
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+		font-size: calc($fontSize - 2px);
+		line-height: 1.5;
+
+
 	}
 }
