@@ -1,0 +1,156 @@
+@import "variables";
+@import "components/mixin";
+
+.archiveBanner {
+	height: 300px;
+	width: 100%;
+	position: relative;
+
+	img {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+		object-position: center;
+
+	}
+}
+
+.archiveBody {
+	position: relative;
+}
+
+.archive {
+	&_title {
+		font-size: 35px;
+		line-height: 53px;
+		font-weight: bold;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	&_content {
+		display: flex;
+		&>*{
+			padding: 0 10px;
+		}
+	}
+}
+
+.sidebar {
+	width: 25%;
+    &>*{
+		position: sticky;
+		top: 4%;
+	}
+
+	&_title {
+		padding: 5px 0;
+		font-size: calc($fontSize + 4px);
+		text-transform: uppercase;
+		font-weight: bold;
+		position: relative;
+		&::before {
+			content: '';
+			position: absolute;
+			height: 2px;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			@include bg-gradien(90)
+
+		}
+	}
+
+	&_item{
+		display: flex;
+		padding: 10px 0;
+
+		border-bottom: lighten($colorText, 70) 1px solid;
+		&:hover {
+			img {
+				transform: scale(1.1);
+			}
+		}
+	}
+	&_itemImage{
+		position: relative;
+		width: 35%;
+		padding-top: 30%;
+		overflow: hidden;
+
+		img {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			object-fit: cover;
+			transition: all 1s;
+		}
+	}
+	&_itemTitle{
+		flex: 1;
+		font-size: calc($fontSize - 2px);
+		color: $primary;
+		padding:5px 10px;
+	}
+
+}
+
+.postItem {
+	position: relative;
+	background: $bgLight;
+	display: flex;
+	margin-bottom: 30px;
+
+	&:hover {
+		img {
+			transform: scale(1.1);
+		}
+	}
+
+	&_image {
+		position: relative;
+		width: 40%;
+		padding-top: 25%;
+		overflow: hidden;
+
+		img {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			object-fit: cover;
+			transition: all 1s;
+		}
+	}
+
+	&_body {
+		flex: 1;
+		padding: 40px 35px 20px 25px;
+	}
+
+	&_title {
+		color: $primary;
+		font-size: 20px;
+		margin-bottom: 20px;
+		max-height: 60px;
+		overflow: hidden;
+		font-weight: bold;
+	}
+
+	&_des {
+		color: $colorText;
+		margin-bottom: 20px;
+		font-size: calc($fontSize - 2px);
+	}
+
+	&_date {
+		color: lighten($colorText, 50);
+		font-size: calc($fontSize - 2px);
+	}
+}

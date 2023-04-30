@@ -2,6 +2,7 @@
 
 namespace HPlab;
 
+use HPlab\fields\FieldCategory;
 use HPlab\fields\FieldHome;
 use HPlab\fields\FieldOption;
 
@@ -12,5 +13,6 @@ class Fields
 	{
 		new FieldOption;
 		new FieldHome;
+		new FieldCategory;
 	}
 }

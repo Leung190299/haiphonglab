@@ -8,7 +8,7 @@
 			<?php
 			 wp_nav_menu([
 				'theme_location' => 'about',
-				'menu_class' => 'aboutMneu_body',
+				'menu_class' => 'menuAbout_body',
 			]);
 			?>
 		</div>
