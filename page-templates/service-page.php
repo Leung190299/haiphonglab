@@ -8,10 +8,9 @@
 <main id="primary" class="site-main ">
 
 	<?php
-		get_template_part('template-parts/home-page/banner');
-		get_template_part('template-parts/home-page/getTest');
-		get_template_part('template-parts/home-page/service');
-		get_template_part('template-parts/home-page/homePost');
+		get_template_part('template-parts/service-page/banner');
+		get_template_part('template-parts/service-page/content');
+
 
 	?>
 

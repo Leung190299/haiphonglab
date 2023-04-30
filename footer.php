@@ -1,4 +1,4 @@
-</main>
+
 <footer class="footer " role="contentinfo">
 	<!-- nội dung footer -->
 	<div class="footer_info">

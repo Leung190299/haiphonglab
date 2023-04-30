@@ -18,6 +18,7 @@ class Loader
 		register_nav_menus([
 			'menu' 		=>  esc_html__('Primary Menu', 'hpl'),
 			'menu-mobile' 	=>  esc_html__('Menu Mobile', 'hpl'),
+			'about' 	=>  esc_html__('Menu About', 'hpl'),
 		]);
 
 		add_theme_support('automatic-feed-links');
@@ -64,6 +65,7 @@ class Loader
 		Assets::template_js('page-templates/home-page.php','slick',['jquery']);
 
 
+		Assets::template_css( 'page-templates/service-page.php', 'service' );
 
 		// Assets::template_js([
 		// 	'page-templates/home-template.php',
