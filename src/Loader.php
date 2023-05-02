@@ -63,6 +63,7 @@ class Loader
 		Assets::template_css( 'page-templates/home-page.php', 'home' );
 		Assets::template_css('page-templates/home-page.php','slick');
 		Assets::template_js('page-templates/home-page.php','slick',['jquery']);
+		Assets::template_js('page-templates/home-page.php','slider',['jquery']);
 
 
 		Assets::template_css( 'page-templates/service-page.php', 'service' );
@@ -70,6 +71,11 @@ class Loader
 
 
 		Assets::archiave_css('archive');
+		Assets::single_css('single');
+		Assets::single_css('slick');
+		Assets::single_js('slick',['jquery']);
+		Assets::single_js('slider',['jquery']);
+
 
 		// Assets::template_js([
 		// 	'page-templates/home-template.php',

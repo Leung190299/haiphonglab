@@ -37,4 +37,16 @@ class Assets
 			self::css($name);
 		}
 	}
+	public static function single_css($name)
+	{
+		if (is_single()) {
+			self::css($name);
+		}
+	}
+	public static function single_js($name,$deps = [], $data = [])
+	{
+		if (is_single()) {
+			self::js($name,$deps,$data);
+		}
+	}
 }

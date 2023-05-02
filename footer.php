@@ -1,4 +1,3 @@
-
 <footer class="footer " role="contentinfo">
 	<!-- nội dung footer -->
 	<div class="footer_info">
@@ -67,6 +66,9 @@
 	</div>
 </footer>
 
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v16.0&appId=612707743856509&autoLogAppEvents=1" nonce="VTv0YAd3"></script>
 
 <?php wp_footer(); ?>
 </body>
