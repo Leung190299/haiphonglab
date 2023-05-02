@@ -8,6 +8,7 @@ class FieldOption
 	{
 		$this->initOptionPage();
 		$this->settingFieldOptionPage();
+		$this->fieldOption();
 	}
 
 	public function initOptionPage()
@@ -18,12 +19,6 @@ class FieldOption
 			'menu_slug'     => 'settingPage',
 			'capability'    => 'edit_posts',
 			'redirect'      => false
-		]);
-		acf_add_options_page([
-			'page_title'    => 'Header setting',
-			'menu_title'    => 'Header',
-			'parent_slug'   => 'settingPage',
-			'menu_slug'     => 'header',
 		]);
 		acf_add_options_page([
 			'page_title'    => 'Footer seting',
@@ -208,13 +203,7 @@ class FieldOption
 					'type' => 'wysiwyg',
 					'media_upload' => 0,
 				],
-				[
-					'key' => 'map',
-					'name' => 'map',
-					'label' => 'Bản đồ',
-					'type' => 'textarea',
 
-				]
 			],
 			'location' => [
 				[
@@ -224,6 +213,78 @@ class FieldOption
 						'value' => 'footer',
 					],
 				],
+			],
+			'menu_order' => 0,
+			'position' => 'normal',
+			'style' => 'default',
+			'label_placement' => 'top',
+			'instruction_placement' => 'label',
+			'hide_on_screen' => '',
+			'active' => true,
+			'description' => '',
+			'show_in_rest' => 0,
+		]);
+	}
+
+	public function fieldOption()
+	{
+		acf_add_local_field_group([
+			'key' => 'fieldOptionPage',
+			'title' => 'Setting page',
+			'location' => [
+				[
+					[
+						'param' => 'options_page',
+						'operator' => '==',
+						'value' => 'settingPage',
+					],
+				],
+			],
+			'fields' => [
+
+				[
+					'key' => 'nameWeb',
+					'name' => 'nameWeb',
+					'label' => 'Tên phòng khám',
+					'type' => 'text'
+				],
+				[
+					'key' => 'address',
+					'name' => 'address',
+					'label' => 'Địa chỉ',
+					'type' => 'text'
+				],
+				[
+					'key' => 'phone',
+					'name' => 'phone',
+					'label' => 'Số điện thoại',
+					'type' => 'text'
+				],
+				[
+					'key' => 'email',
+					'name' => 'email',
+					'label' => 'Email',
+					'type' => 'text'
+				],
+				[
+					'key' => 'map',
+					'name' => 'map',
+					'label' => 'Đường dẫn bản đồ',
+					'type' => 'textarea'
+				],
+				[
+					'key' => 'codeFormContact',
+					'name' => 'codeFormContact',
+					'label' => 'code form liên hệ',
+					'type' => 'text'
+				],
+				[
+					'key' => 'codeFormGetTest',
+					'name' => 'codeFormGetTest',
+					'label' => 'code form đặt lịch khám',
+					'type' => 'text'
+				],
+
 			],
 			'menu_order' => 0,
 			'position' => 'normal',

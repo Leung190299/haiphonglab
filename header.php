@@ -37,31 +37,50 @@
             <div class="container">
                 <div class="header_body">
                     <div class="header_boxItem">
-                        <button class="header_item">
+                        <button class="header_item" data-modal="formTest">
                             <div class="header_itemIcon">
                                 <?php Template_function::getIcon('calendar') ?>
                             </div>
                             <div class="header_itemTitle">ĐẶT LỊCH HẸN</div>
                         </button>
-                        <button class="header_item">
+                        <button class="header_item" data-modal="formgetTest">
                             <div class="header_itemIcon">
                                 <?php Template_function::getIcon('page') ?>
                             </div>
                             <div class="header_itemTitle">XEM KẾT QUẢ XÉT NGHIỆM</div>
                         </button>
-                        <button class="header_item">
+                        <button class="header_item" data-modal="contact">
                             <div class="header_itemIcon">
                                 <?php Template_function::getIcon('edit') ?>
                             </div>
                             <div class="header_itemTitle">LIÊN HỆ GÓP Ý</div>
                         </button>
-                        <button class="header_item">
+                        <button class="header_item" data-modal="phoneContact">
                             <div class="header_itemIcon">
                                 <?php Template_function::getIcon('phone') ?>
                             </div>
                             <div class="header_itemTitle">HOTLINE: 0915 82 1509</div>
                         </button>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal">
+            <div class="modal_body">
+                <div id="formTest" class="modal_content">
+                    <?php get_template_part('template-parts/formTest'); ?>
+                </div>
+                <div id="formgetTest" class="modal_content">
+                    <?php get_template_part('template-parts/formSetTest'); ?>
+                </div>
+                <div id="contact" class="modal_content">
+                    <?php get_template_part('template-parts/contact'); ?>
+                </div>
+                <div id="phoneContact" class="modal_content">
+                    <?php get_template_part('template-parts/formSetTest'); ?>
+                </div>
+                <div id="map" class="modal_content">
+                    <?= get_field('map', 'option') ?>
                 </div>
             </div>
         </div>

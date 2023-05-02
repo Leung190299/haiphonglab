@@ -4,7 +4,7 @@
 class Template_function {
 
 	public static function getImage( $name ) {       ?>
-		<img class="img" src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/<?php echo esc_attr( $name ) ?>" alt="">
+		<img  class="img" src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/<?php echo esc_attr( $name ) ?>" alt="">
 		<?php
 	}
 	public static function getIcon( $name ) {
