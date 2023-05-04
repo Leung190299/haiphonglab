@@ -7,12 +7,6 @@ $email = get_field('email', 'option');
 $form = get_field('codeFormContact', 'option');
 
 ?>
-<div class="contact">
-	<div class="contact_info">
-		<div class="contact_infoName">
-			<?= $name ?>
-		</div>
-		<div class="contact_content">
 			<div class="contact_item">
 				<div class="contact_itemBox">
 					<div class="contact_itemIcon"><?php Template_function::getIcon('home') ?></div>

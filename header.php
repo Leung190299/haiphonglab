@@ -29,6 +29,12 @@
                         <div class="header_search">
                             <button><?php Template_function::getIcon('search') ?></button>
                         </div>
+                        <button id="btnMenu" class="btnMenu" >
+                            <span></span>
+                        </button>
+                        <button id="btnClose" class="btnClose" >
+
+                        </button>
                     </div>
                 </div>
             </div>

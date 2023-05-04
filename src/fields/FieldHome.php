@@ -8,7 +8,9 @@ class FieldHome
 	{
 		$this->banner();
 		$this->test();
+		$this->partner();
 	}
+
 	public function banner()
 	{
 		acf_add_local_field_group(
@@ -111,6 +113,63 @@ class FieldHome
 					'name' => 'codeFormTest',
 					'type' => 'text',
 				]
+
+			]
+		]);
+	}
+	public function partner(){
+		acf_add_local_field_group([
+			'key' => 'partner',
+			'title' => 'Các đối tác ',
+			'menu_order' => 0,
+			'position' => 'normal',
+			'style' => 'default',
+			'label_placement' => 'top',
+			'instruction_placement' => 'label',
+			'hide_on_screen' => '',
+			'active' => true,
+			'description' => '',
+			'show_in_rest' => 0,
+			'location' => [
+				[
+					[
+						'param' => 'page_template',
+						'operator' => '==',
+						'value' => 'page-templates/home-page.php',
+					]
+				]
+			],
+			'fields' => [
+				[
+					'key' => 'partners',
+					'name' => 'partners',
+					'label' => 'Các đối tác',
+					'instructions' => 'Thêm và chỉnh sửa các đối tác',
+					'type' => 'repeater',
+					'layout' => 'row',
+					'button_label' => 'Thêm đối tác',
+					'sub_fields' => [
+						[
+							'key' => 'image',
+							'label' => 'Image',
+							'name' => 'image',
+							'type' => 'image',
+							'return_format' => 'id',
+							'library' => 'all',
+							'preview_size' => 'medium',
+							'parent_repeater' => 'partners',
+						],
+						[
+							'key' => 'link',
+							'label' => 'Link đối tác',
+							'name' => 'link',
+							'type' => 'text',
+							'parent_repeater' => 'partners',
+							'default_value' => '#'
+						]
+					]
+				]
+
 
 			]
 		]);

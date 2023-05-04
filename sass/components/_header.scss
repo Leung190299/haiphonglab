@@ -1,106 +1,189 @@
 .header {
-    position: relative;
+	position: relative;
+    overflow: hidden;
+	svg {
+		height: 100%;
+		width: 100%;
+	}
 
-    svg {
-        height: 100%;
-        width: 100%;
+	&_top {
+		background: $light;
+	}
+
+	&_bottom {
+		@include bg-gradien(90);
+	}
+
+	&_body {
+		padding: $padding 0;
+		display: flex;
+		justify-content: space-between;
+        transition: all .5s;
+	}
+
+	&_logo {
+		max-width: 300px;
+	}
+
+	&_menu {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&_menuBody {
+		display: flex;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+	}
+
+	.menu-item a {
+		display: block;
+		font-size: 16px;
+		font-weight: bold;
+		line-height: 24px;
+		padding: 10px 20px;
+		font-weight: bold;
+		text-transform: uppercase;
+		transition: .5s;
+		color: $colorText;
+
+		&:hover {
+			color: $primary !important;
+		}
+	}
+
+	&_search {
+		padding: 5px 0;
+
+		button {
+			border-left: 1px solid #e6e6e6;
+			border-radius: 0;
+			width: 45px;
+			height: 35px;
+			padding: 5px;
+
+			svg {
+				fill: #00b81c !important;
+			}
+		}
+
+		&:hover {
+			svg {
+				fill: $primary !important;
+			}
+		}
+	}
+
+	&_boxItem {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+	}
+
+	&_item {
+		margin: 0;
+		padding: 0%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex: 1;
+		color: $light;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+
+	&_itemIcon {
+		width: 25px;
+		height: 25px;
+		margin-right: 10px;
+
+		svg {
+			fill: $light;
+		}
+	}
+
+	&_itemTitle {
+		font-size: calc($fontSize - 2px);
+	}
+}
+ .btnMenu{
+    position:relative ;
+    display: none;
+    flex-direction: column;
+    span,&::after,&::before{
+        display: block;
+        width: 30px;
+        height: 3px;
+        content: '';
+        margin: 3px 0;
+        @include bg-gradien(90)
     }
-
-    &_top {
-        background: $light;
-    }
-
-    &_bottom {
+ }
+ .btnClose{
+    position: fixed;
+    top: 2%;
+    right: 2%;
+    z-index: 1000;
+    display: none;
+    &::after,&::before{
+        display: block;
+        width: 30px;
+        height: 3px;
+        content: '';
+        margin: 3px 0;
         @include bg-gradien(90);
     }
-
-    &_body {
-        padding: $padding 0;
-        display: flex;
-        justify-content: space-between;
+    &::after{
+        transform: rotate(45deg);
     }
-    &_logo{
-        max-width:300px ;
+    &::before{
+        transform: rotate(-45deg);
+        top: 6px;
+        position: relative;
     }
+ }
 
-    &_menu {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    &_menuBody {
-        display: flex;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-
-    }
-
-    .menu-item a {
-        display: block;
-        font-size: 16px;
-        font-weight: bold;
-        line-height: 24px;
-        padding: 10px 20px;
-        font-weight: bold;
-        text-transform: uppercase;
-        transition: .5s;
-        color: $colorText;
-
-        &:hover {
-            color: $primary !important;
+@media (max-width:768px) {
+	.header {
+        .btnMenu{
+            display: flex;
         }
-    }
-
-    &_search {
-        padding: 5px 0;
-
-        button {
-            border-left: 1px solid #e6e6e6;
-            border-radius: 0;
-            width: 45px;
-            height: 35px;
-            padding: 5px;
-
-            svg {
-                fill: #00b81c !important;
+        .btnClose.isShow{
+            display: block;
+        }
+		&_menuBody {
+			position: fixed;
+			width: 100%;
+			top: 0;
+			left: 0;
+			flex-direction: column;
+			z-index: 1000;
+			background: $light;
+            height: 100vh;
+            transform: translateY(-100%);
+            &.isShow{
+                transform: translateY(0);
             }
-        }
+			&::before {
+				content: "Menu";
+				display: block;
+				width: 100%;
+				@include bg-gradien(90);
+				font-size: 16px;
+				font-weight: bold;
+				line-height: 24px;
+				padding: 10px 20px;
+                color: $light;
+			}
 
-        &:hover {
-            svg {
-                fill: $primary !important;
-            }
-        }
-    }
-
-    &_boxItem{
-        display: flex;
-        justify-content:space-between;
-        align-items: center;
-        width: 100%;
-    }
-    &_item{
-        margin: 0;
-        padding: 0%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex: 1;
-        color: $light;
-        font-weight: bold;
-            text-transform: uppercase;
-    }
-    &_itemIcon{
-        width: 25px;
-        height: 25px;
-        margin-right:10px ;
-        svg{
-            fill: $light;
-        }
-    }
+		}
         &_itemTitle{
-            font-size: calc($fontSize - 2px);
+            display: none;
         }
+	}
+
 }
