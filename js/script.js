@@ -27,5 +27,20 @@
     })
 
   };
+  const menuHandel = () => {
+    const btnOpen = d.querySelector( '#btnMenu' );
+    const menuBody = d.querySelector( '.header_menuBody' );
+    const btnClose = d.querySelector( '.btnClose' );
+    btnOpen.addEventListener( 'click', () => {
+      menuBody.classList.add( 'isShow' );
+      btnClose.classList.add( 'isShow' );
+    } );
+    btnClose.addEventListener( 'click', function() {
+      this.classList.remove( 'isShow' );
+      menuBody.classList.remove( 'isShow' );
+
+    })
+  }
   handleMadol();
+  menuHandel();
 })(document);

@@ -36,6 +36,7 @@
 		list-style: none;
 		margin: 0;
 		padding: 0;
+		transition: all .5s;
 
 	}
 
@@ -125,8 +126,8 @@
  }
  .btnClose{
     position: fixed;
-    top: 2%;
-    right: 2%;
+    top: 5px ;
+    right: 10px;
     z-index: 1000;
     display: none;
     &::after,&::before{
@@ -135,7 +136,7 @@
         height: 3px;
         content: '';
         margin: 3px 0;
-        @include bg-gradien(90);
+		background: $light;
     }
     &::after{
         transform: rotate(45deg);
@@ -147,7 +148,7 @@
     }
  }
 
-@media (max-width:768px) {
+@media (max-width:1024px) {
 	.header {
         .btnMenu{
             display: flex;
@@ -165,6 +166,7 @@
 			background: $light;
             height: 100vh;
             transform: translateY(-100%);
+
             &.isShow{
                 transform: translateY(0);
             }

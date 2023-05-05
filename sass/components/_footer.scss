@@ -160,3 +160,35 @@ padding: 20px 0;
 		margin: 0;
 	}
 }
+
+@media (max-width:768px) {
+	.footer{
+		&_infoBox{
+			flex-wrap: wrap;
+		}
+		&_infoItem,&_item{
+			flex: 1 50%;
+			margin: 10px 0;
+		}
+		&_bodyBox{
+			flex-wrap: wrap;
+		}
+	}
+}
+
+@media (max-width:640px) {
+	.footer{
+
+		&_infoItem,&_item{
+			flex: 1 100%;
+			margin: 10px 0;
+		}
+		&_contactBox{
+			flex-wrap: wrap;
+			&>*{
+				flex: 1 100%;
+			}
+		}
+
+	}
+}

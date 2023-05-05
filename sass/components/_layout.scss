@@ -78,6 +78,9 @@
 	text-transform: uppercase;
 	border-left: $primary solid 3px;
 	margin: 0;
+	@media (max-width:768px) {
+		font-size: calc($fontSize + 4px);
+	}
 }
 
 .form {
@@ -224,6 +227,7 @@ input {
 		justify-content: center;
 		align-items: center;
 		overflow: auto;
+		padding: 0 $fontSize;
 
 	}
 	&_content{
@@ -263,10 +267,13 @@ input {
 	background:$light;
 	padding: $fontSize;
 	width: 100%;
+	max-height: calc(100vh * 2 /3);
+	overflow: auto;
 	&_info{
 		display: flex;
 		background: $bgLight;
 		padding: $fontSize;
+		flex-direction: column;
 	}
 	&_infoName{
 		width: 30%;
@@ -279,7 +286,7 @@ input {
 	&_itemIcon{
 		width: 30px;
 		height: 30px;
-		margin: 0 $fontSize;
+		margin-right: $fontSize;
 	}
 	&_item{
 		display: flex;
