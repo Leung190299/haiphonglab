@@ -261,6 +261,12 @@ class FieldOption
 					'type' => 'text'
 				],
 				[
+					'key' => 'phone2',
+					'name' => 'phone2',
+					'label' => 'Số điện thoại thường trực',
+					'type' => 'text'
+				],
+				[
 					'key' => 'email',
 					'name' => 'email',
 					'label' => 'Email',
@@ -284,6 +290,7 @@ class FieldOption
 					'label' => 'code form đặt lịch khám',
 					'type' => 'text'
 				],
+
 
 			],
 			'menu_order' => 0,

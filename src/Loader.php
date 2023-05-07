@@ -75,6 +75,7 @@ class Loader
 
 
 		Assets::archiave_css('archive');
+		Assets::search_css('search');
 		Assets::single_css('single');
 		Assets::single_css('slick');
 		Assets::single_js('slick', ['jquery']);

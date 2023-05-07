@@ -44,7 +44,8 @@
 	}
 
 }
-.slick-arrow{
+
+.slick-arrow {
 	position: absolute;
 	background: $bgLight;
 	width: 40px;
@@ -56,17 +57,20 @@
 	justify-content: center;
 	align-items: center;
 	padding: 14px;
-	box-shadow: 0 0 5px 0 rgba(0,0,0,.3);
+	box-shadow: 0 0 5px 0 rgba(0, 0, 0, .3);
 	z-index: 11;
 	cursor: pointer;
-	&:hover{
+
+	&:hover {
 		background: #f0f4ffca;
 	}
 }
-.nextArrow{
+
+.nextArrow {
 	right: 0;
 }
-.prevArrow{
+
+.prevArrow {
 	left: 0;
 }
 
@@ -78,6 +82,7 @@
 	text-transform: uppercase;
 	border-left: $primary solid 3px;
 	margin: 0;
+
 	@media (max-width:768px) {
 		font-size: calc($fontSize + 4px);
 	}
@@ -169,7 +174,7 @@ input {
 		content: '';
 		z-index: -1;
 		opacity: .3;
-		@include iconBg(0%, 20%, 200px, 200px ,url('./images/bgicon.png'));
+		@include iconBg(0%, 20%, 200px, 200px, url('./images/bgicon.png'));
 	}
 
 	.form_text {
@@ -204,22 +209,24 @@ input {
 		transition: all 0.3s linear;
 		font-size: 15px;
 		display: block;
-		&:hover{
+
+		&:hover {
 			background: $light;
 			color: $primary;
 		}
 	}
 }
 
- .modal{
+.modal {
 	position: fixed;
-	height:100vh;
+	height: 100vh;
 	width: 100vw;
 	top: 0;
 	left: 0;
 	z-index: 100;
 	display: none;
-	&_body{
+
+	&_body {
 		background-color: #00000064;
 		display: flex;
 		height: 100%;
@@ -230,32 +237,38 @@ input {
 		padding: 0 $fontSize;
 
 	}
-	&_content{
+
+	&_content {
 
 		max-width: 600px;
 		display: none;
 		animation: fadeIn 1s linear;
 		position: relative;
-		&:nth-child(3){
+
+		&:nth-child(3) {
 			max-width: 1000px;
 		}
-	@media (max-width:1024px) {
+
+		@media (max-width:1024px) {
 			max-width: 100% !important;
 			width: 100% !important;
+		}
 	}
-	}
- }
- @keyframes fadeIn{
+}
+
+@keyframes fadeIn {
 
 	from {
 		transform: translateY(-50%);
 		opacity: 0;
 	}
+
 	to {
 		// transform: translateY(0);
 		opacity: 1;
 	}
- }
+}
+
 @keyframes rotate {
 	from {
 		transform: rotate(0deg);
@@ -267,53 +280,61 @@ input {
 }
 
 
-.contact{
-	background:$light;
+.contact {
+	background: $light;
 	padding: $fontSize;
 	width: 100%;
 	max-height: calc(100vh * 2 /3);
 	overflow: auto;
-	&_info{
+
+	&_info {
 		display: flex;
 		background: $bgLight;
 		padding: $fontSize;
 		flex-direction: column;
 	}
-	&_infoName{
+
+	&_infoName {
 		width: 30%;
 	}
-	&_content{
+
+	&_content {
 		flex: 1;
 		display: flex;
 		flex-direction: column;
 	}
-	&_itemIcon{
+
+	&_itemIcon {
 		width: 30px;
 		height: 30px;
 		margin-right: $fontSize;
 	}
-	&_item{
+
+	&_item {
 		display: flex;
 		align-items: center;
 		font-size: calc($fontSize - 2px);
 		font-weight: bold;
 	}
-	&_itemBox{
+
+	&_itemBox {
 		display: flex;
 		width: 25%;
 		align-items: center;
 	}
-	&_value{
+
+	&_value {
 		flex: 1;
 	}
 
-	.btn{
+	.btn {
 		width: auto;
 		padding: 10px 20px;
 		margin-left: auto;
 		margin-top: $fontSize;
 	}
-	&_infoName{
+
+	&_infoName {
 		padding: 10px 40px 10px 0;
 		position: relative;
 		z-index: 2;
@@ -322,14 +343,16 @@ input {
 		color: #1189ca;
 		font-weight: bold;
 	}
-	&_form{
+
+	&_form {
 		display: flex;
 		flex-direction: column;
 		background: $bgLight;
 		padding: $fontSize;
 		margin-top: $fontSize;
 	}
-	&_title{
+
+	&_title {
 		font-size: calc($fontSize + 2px);
 		line-height: 1.3;
 		color: $primary;
@@ -338,27 +361,31 @@ input {
 		font-weight: bold;
 
 	}
+
 	.fluentform .ff-el-form-control {
 		background-color: $light !important;
 		color: #333333;
 		border-radius: 0;
 	}
-	.fluentform .ff-el-input--label{
+
+	.fluentform .ff-el-input--label {
 		font-size: calc($fontSize - 2px) !important;
 	}
-	.ff-btn{
+
+	.ff-btn {
 		width: 100px;
 		font-weight: bold !important;
 	}
 
 }
-.result{
+
+.result {
 	background: $light;
 	width: 100%;
 	padding: $fontSize;
 	border-radius: 20px;
 
-	&_title{
+	&_title {
 		font-size: calc($fontSize + 4px);
 		font-weight: bold;
 		text-align: center;
@@ -366,46 +393,67 @@ input {
 		color: $primary;
 		text-transform: uppercase;
 	}
-	&_content{
+
+	&_content {
 		display: flex;
 		flex-wrap: wrap;
 	}
-	&_item{
+
+	&_item {
 		flex: 1 50%;
 		margin: 10px 0;
 	}
-	&_label{
+
+	&_label {
 		font-size: calc($fontSize + 2px);
 		font-weight: bold;
 		color: $primary;
 	}
-	&_value{
+
+	&_value {
 		font-size: calc($fontSize + 2px);
 		margin-top: 5px;
 		margin-left: 5px;
 		font-weight: bold;
+
+		.btn {
+			display: block;
+			width: max-content !important;
+			padding: 10px 20px;
+			border-radius: 20px;
+			font-size: 12px;
+			overflow: hidden;
+			cursor: pointer;
+
+		}
 	}
-	.file_content{
+
+	.file_content {
 		height: 700px;
+		margin-top: 20px;
+
 		@media (max-width:1024px) {
 			height: 400px;
-	}
+		}
 
 	}
 
 }
-#result{
-	max-width: 1024px ;
+
+#result {
+	max-width: 1024px;
 	width: 1024px;
 }
-.mess{
+
+.mess {
 	background: $light;
 	width: 100%;
 	padding: $fontSize;
 	border-radius: 20px;
 	display: flex;
 	flex-direction: column;
-	&_title{
+
+	&_title {
 		font-size: calc($fontSize + 4px);
 		font-weight: bold;
 		text-align: center;
@@ -413,19 +461,63 @@ input {
 		color: $primary;
 		text-transform: uppercase;
 	}
-	&_des{
+
+	&_des {
 		padding: 20px;
 		text-align: center;
-		color: rgba(53,193,182,1);
-		font-size: calc($fontSize - 2px );
+		color: rgba(53, 193, 182, 1);
+		font-size: calc($fontSize - 2px);
 		font-weight: bold;
 
 	}
-	.btn{
+
+	.btn {
 		width: auto;
-		padding: 10px 20px ;
+		padding: 10px 20px;
 		border-radius: 20px;
 		margin-left: auto;
 		overflow: hidden;
+	}
+}
+
+.phoneContact {
+	background: $light;
+	width: 100%;
+	padding: 20px;
+
+	&_content {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&_item {
+		display: flex;
+		margin: 10px 0;
+		justify-content: center;
+		align-items: center;
+
+		&>* {
+			flex: 1;
+		}
+	}
+
+	&_label {
+		font-weight: 500;
+		line-height: 1.5;
+	}
+
+	&_note{
+		margin-bottom: $fontSize;
+		font-size: 12px;
+		border-top: lighten($secondary, 50) 1px solid;
+		padding-top: 10px;
+	}
+	&_value {
+		font-weight: bold;
+
+		a {
+
+			color: $primary;
+		}
 	}
 }

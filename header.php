@@ -27,7 +27,7 @@
                             'menu_class' => 'header_menuBody',
                         ]); ?>
                         <div class="header_search">
-                            <button><?php Template_function::getIcon('search') ?></button>
+                            <button class="btnSeach" data-modal="search"><?php Template_function::getIcon('search') ?></button>
                         </div>
                         <button id="btnMenu" class="btnMenu">
                             <span></span>
@@ -61,11 +61,11 @@
                             </div>
                             <div class="header_itemTitle">LIÊN HỆ GÓP Ý</div>
                         </button>
-                        <button class="header_item" data-modal="mess">
+                        <button class="header_item" data-modal="phoneContact">
                             <div class="header_itemIcon">
                                 <?php Template_function::getIcon('phone') ?>
                             </div>
-                            <div class="header_itemTitle">HOTLINE: 0915 82 1509</div>
+                            <div class="header_itemTitle">HOTLINE: <?= get_field('phone','option')?></div>
                         </button>
                     </div>
                 </div>
@@ -73,6 +73,9 @@
         </div>
         <div class="modal">
             <div class="modal_body">
+            <div id="search" class="modal_content">
+                    <?= get_search_form() ?>
+                </div>
                 <div id="formTest" class="modal_content">
                     <?php get_template_part('template-parts/formSetTest'); ?>
                 </div>
@@ -83,7 +86,20 @@
                     <?php get_template_part('template-parts/contact'); ?>
                 </div>
                 <div id="phoneContact" class="modal_content">
-                    <?php get_template_part('template-parts/formSetTest'); ?>
+                        <div class="phoneContact">
+                            <div class="phoneContact_content">
+                                <div class="phoneContact_item">
+                                    <div class="phoneContact_label">Hotline tư vấn</div>
+                                    <div class="phoneContact_value"><a href="tel:<?= get_field('phone','option')?>"> <?= get_field('phone','option')?></a></div>
+                                </div>
+                                <div class="phoneContact_item">
+                                    <div class="phoneContact_label">Số điện thoại thường trực</div>
+                                    <div class="phoneContact_value"><a href="tel:<?= get_field('phone2','option')?>"> <?= get_field('phone2','option')?></a></div>
+                                </div>
+                            </div>
+                            <div class="phoneContact_note">Hãy bấm vào số điện thoại để gọi nhanh cho chúng tôi.</div>
+                        <button class="btn" id="btnClone">Đóng</button>
+                        </div>
                 </div>
                 <div id="map" class="modal_content">
                     <?= get_field('map', 'option') ?>

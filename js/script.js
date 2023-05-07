@@ -5,6 +5,7 @@
     const madolBody = d.querySelector(".modal_body");
     const listMadol = d.querySelectorAll(".modal_content");
     const btnMap = d.querySelector("#btn-map");
+    const btnSearch = d.querySelector(".btnSeach");
     const btnClose = d.querySelector("#btnClone");
     listMenu.forEach((menu) => {
       menu.addEventListener("click", function () {
@@ -24,6 +25,12 @@
     btnMap.addEventListener("click", function () {
       listMadol.forEach((modal) => (modal.style.display = "none"));
       let madolName = this.dataset.modal;
+      d.querySelector(`#${madolName}`).style.display = "block";
+    } );
+    btnSearch.addEventListener("click", function () {
+      listMadol.forEach((modal) => (modal.style.display = "none"));
+      let madolName = this.dataset.modal;
+      madol.style.display = "block";
       d.querySelector(`#${madolName}`).style.display = "block";
     });
     btnClose.addEventListener("click", (e) => {
@@ -80,6 +87,15 @@
         </div>
         <div class="result_value">
         ${data.phone}
+        </div>
+      </div>
+
+      <div class="result_item">
+        <div class="result_label">
+            Phiếu xét nghiệm:
+        </div>
+        <div class="result_value">
+        <a class="btn" href="${data.file}" download> Tải phiếu</a>
         </div>
       </div>
 
