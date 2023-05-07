@@ -251,6 +251,7 @@
 .partner {
 	background: $bgLight;
 	position: relative;
+	overflow: hidden;
 
 	&::after {
 		content: '';

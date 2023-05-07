@@ -239,6 +239,10 @@ input {
 		&:nth-child(3){
 			max-width: 1000px;
 		}
+	@media (max-width:1024px) {
+			max-width: 100% !important;
+			width: 100% !important;
+	}
 	}
  }
  @keyframes fadeIn{
@@ -347,4 +351,81 @@ input {
 		font-weight: bold !important;
 	}
 
+}
+.result{
+	background: $light;
+	width: 100%;
+	padding: $fontSize;
+	border-radius: 20px;
+
+	&_title{
+		font-size: calc($fontSize + 4px);
+		font-weight: bold;
+		text-align: center;
+		line-height: 40px;
+		color: $primary;
+		text-transform: uppercase;
+	}
+	&_content{
+		display: flex;
+		flex-wrap: wrap;
+	}
+	&_item{
+		flex: 1 50%;
+		margin: 10px 0;
+	}
+	&_label{
+		font-size: calc($fontSize + 2px);
+		font-weight: bold;
+		color: $primary;
+	}
+	&_value{
+		font-size: calc($fontSize + 2px);
+		margin-top: 5px;
+		margin-left: 5px;
+		font-weight: bold;
+	}
+	.file_content{
+		height: 700px;
+		@media (max-width:1024px) {
+			height: 400px;
+	}
+
+	}
+
+}
+#result{
+	max-width: 1024px ;
+	width: 1024px;
+}
+.mess{
+	background: $light;
+	width: 100%;
+	padding: $fontSize;
+	border-radius: 20px;
+	display: flex;
+	flex-direction: column;
+	&_title{
+		font-size: calc($fontSize + 4px);
+		font-weight: bold;
+		text-align: center;
+		line-height: 40px;
+		color: $primary;
+		text-transform: uppercase;
+	}
+	&_des{
+		padding: 20px;
+		text-align: center;
+		color: rgba(53,193,182,1);
+		font-size: calc($fontSize - 2px );
+		font-weight: bold;
+
+	}
+	.btn{
+		width: auto;
+		padding: 10px 20px ;
+		border-radius: 20px;
+		margin-left: auto;
+		overflow: hidden;
+	}
 }

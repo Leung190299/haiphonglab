@@ -10,6 +10,9 @@ class Loader
 		add_action('after_setup_theme', [$this, 'setup']);
 		add_action('widgets_init', [$this, 'tmt_widgets_init']);
 		add_action('wp_enqueue_scripts', [$this, 'enqueue_assets']);
+		add_action('init', [$this, 'create_post_type']);
+		add_action('wp_ajax_analysis', [$this, 'sreach_analysis']);
+		add_action('wp_ajax_nopriv_analysis', [$this, 'sreach_analysis']);
 	}
 	public function setup()
 	{
@@ -50,31 +53,32 @@ class Loader
 		wp_enqueue_style('novanet-theme', get_stylesheet_uri(), [], filemtime(get_template_directory() . '/style.css'));
 		wp_enqueue_style('animation-theme', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
 
-		wp_enqueue_style( 'magnific-popup', get_template_directory_uri() . '/css/magnific-popup.min.css', [], '1.1.0' );
-		wp_enqueue_script( 'magnific-popup', get_template_directory_uri() . '/js/jquery.magnific-popup.min.js', [ 'jquery' ], '1.1.0', true );
+		wp_enqueue_style('magnific-popup', get_template_directory_uri() . '/css/magnific-popup.min.css', [], '1.1.0');
+		wp_enqueue_script('magnific-popup', get_template_directory_uri() . '/js/jquery.magnific-popup.min.js', ['jquery'], '1.1.0', true);
 
 		// wp_enqueue_style( 'slick', get_template_directory_uri() . '/css/slick.css', [], '1.8.1' );
 		// wp_enqueue_script( 'slick', get_template_directory_uri() . '/js/slick.js', [ 'jquery' ], '1.8.1', true );
 
-		wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js', [ 'jquery' ], '1.0', true );
-		wp_enqueue_script('wow', 'https://cdn.jsdelivr.net/npm/wowjs@1.1.3/dist/wow.min.js', [], '1.1.3', true);
+		// wp_enqueue_script('script', get_template_directory_uri() . '/js/script.js', ['jquery'], '1.0', true);
+		// wp_enqueue_script('wow', 'https://cdn.jsdelivr.net/npm/wowjs@1.1.3/dist/wow.min.js', [], '1.1.3', true);
+		Assets::js('script', ['jquery'], ['url' => admin_url('admin-ajax.php')]);
 
 		//Thêm style cho template
-		Assets::template_css( 'page-templates/home-page.php', 'home' );
-		Assets::template_css('page-templates/home-page.php','slick');
-		Assets::template_js('page-templates/home-page.php','slick',['jquery']);
-		Assets::template_js('page-templates/home-page.php','slider',['jquery']);
+		Assets::template_css('page-templates/home-page.php', 'home');
+		Assets::template_css('page-templates/home-page.php', 'slick');
+		Assets::template_js('page-templates/home-page.php', 'slick', ['jquery']);
+		Assets::template_js('page-templates/home-page.php', 'slider', ['jquery']);
 
 
-		Assets::template_css( 'page-templates/service-page.php', 'service' );
-		Assets::template_css( 'page-templates/about-page.php', 'abouts' );
+		Assets::template_css('page-templates/service-page.php', 'service');
+		Assets::template_css('page-templates/about-page.php', 'abouts');
 
 
 		Assets::archiave_css('archive');
 		Assets::single_css('single');
 		Assets::single_css('slick');
-		Assets::single_js('slick',['jquery']);
-		Assets::single_js('slider',['jquery']);
+		Assets::single_js('slick', ['jquery']);
+		Assets::single_js('slider', ['jquery']);
 
 
 		// Assets::template_js([
@@ -89,5 +93,69 @@ class Loader
 		// 	'page-templates/news-template.php',
 		// ], 'slider', ['jquery']);
 
+	}
+	public function create_post_type()
+	{
+		$labels = [
+			'name' => __('Phiếu xét nghiệm', 'hpl'),
+			'singular_name' => __('Phiếu xét nghiệm', 'hpl'),
+			'menu_name' => __('Phiếu xét nghiệm', 'hpl'),
+			'name_admin_bar' => __('Phiếu xét nghiệm', 'hpl'),
+			'add_new'               => __('Thêm  phiếu', 'hpl'),
+
+		];
+
+		$args = [
+			'labels'             => $labels,
+			'public'             => true,
+			'publicly_queryable' => true,
+			'show_ui'            => true,
+			'show_in_menu'       => true,
+			'query_var'          => true,
+			'rewrite'            => ['slug' => 'analysis'],
+			'capability_type'    => 'post',
+			'has_archive'        => true,
+			'hierarchical'       => false,
+			'menu_position'      => null,
+			'supports'           => ['title', 'author', 'thumbnail', 'custom-fields'],
+		];
+		register_post_type('analysis', $args);
+	}
+	public function sreach_analysis()
+	{
+		$phone = isset($_POST['phone']) ? $_POST['phone'] : '';
+		$id = isset($_POST['id']) ? $_POST['id'] : '';
+		$data = [];
+		$args = [
+			'post_type' => 'analysis',
+			'meta_query' => [
+				'relation' => 'AND',
+				[
+					'key' => 'analysisId',
+					'value' => $id,
+					'compare' => '='
+				],
+				[
+					'key' => 'analysisPhone',
+					'value' => $phone,
+					'compare' => '='
+				]
+			],
+		];
+		$analysis = get_posts($args)[0];
+		if(!$analysis){
+			wp_send_json_error('Vui lòng xem lại thông tin. Chúng tôi không tìm thấy thông tin nào như bạn đã nhập');
+			return;
+		};
+		$data = [
+			'id' => get_field('analysisId', $analysis->ID),
+			'phone' => get_field('analysisPhone', $analysis->ID),
+			'file' => get_field('analysisFile', $analysis->ID),
+			'name'=>get_the_title($analysis->ID)
+		];
+
+		wp_send_json_success($data);
+
+		die();
 	}
 }

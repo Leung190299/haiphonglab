@@ -29,10 +29,10 @@
                         <div class="header_search">
                             <button><?php Template_function::getIcon('search') ?></button>
                         </div>
-                        <button id="btnMenu" class="btnMenu" >
+                        <button id="btnMenu" class="btnMenu">
                             <span></span>
                         </button>
-                        <button id="btnClose" class="btnClose" >
+                        <button id="btnClose" class="btnClose">
 
                         </button>
                     </div>
@@ -61,7 +61,7 @@
                             </div>
                             <div class="header_itemTitle">LIÊN HỆ GÓP Ý</div>
                         </button>
-                        <button class="header_item" data-modal="phoneContact">
+                        <button class="header_item" data-modal="mess">
                             <div class="header_itemIcon">
                                 <?php Template_function::getIcon('phone') ?>
                             </div>
@@ -74,10 +74,10 @@
         <div class="modal">
             <div class="modal_body">
                 <div id="formTest" class="modal_content">
-                    <?php get_template_part('template-parts/formTest'); ?>
+                    <?php get_template_part('template-parts/formSetTest'); ?>
                 </div>
                 <div id="formgetTest" class="modal_content">
-                    <?php get_template_part('template-parts/formSetTest'); ?>
+                    <?php get_template_part('template-parts/formTest'); ?>
                 </div>
                 <div id="contact" class="modal_content">
                     <?php get_template_part('template-parts/contact'); ?>
@@ -87,6 +87,16 @@
                 </div>
                 <div id="map" class="modal_content">
                     <?= get_field('map', 'option') ?>
+                </div>
+                <div id="mess" class="modal_content">
+                    <div class="mess">
+                        <div class="mess_title">Thông báo </div>
+                        <div class="mess_des"></div>
+                        <button class="btn" id="btnClone">Đóng</button>
+                    </div>
+                </div>
+                <div id="result" class="modal_content">
+                    <div class="result"></div>
                 </div>
             </div>
         </div>

@@ -7,10 +7,10 @@
 
 		<div class="form-group">
 			<label for="pid">Mã bệnh nhân <span>(*)</span></label>
-			<input type="text" placeholder="Nhập mã bệnh nhân" class="pid" name="pid" value="">
+			<input type="text" placeholder="Nhập mã bệnh nhân" class="id" name="id" value="">
 		</div>
 		<div class="form-group">
-			<button class="btn" type="button">Xem kết quả</button>
+			<button class="btn analysis" type="button" >Xem kết quả</button>
 		</div>
 	</div>
 </form>
