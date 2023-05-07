@@ -104,9 +104,7 @@
         }
         &:hover:after{
             right: 0;
-            transition: right 0.5s ease-in-out;
-           
-            
+            transition: right 0.5s ease-in-out;          
         }
     }
     &_des{
@@ -229,15 +227,8 @@
         top: 0;
         bottom: 0;
         background-color: #118aca;
+       
     }
-
-    // .serviceItem:nth-child(even) .serviceItem_title::hover{
-    //     transition: color 0.5s ease-in-out;
-    // }
-    // .serviceItem:nth-child(even) .serviceItem_title:hover::after{
-    //     right: 0;
-    //     transition: right 0.5s ease-in-out; 
-    // }
 
     .serviceItem:nth-child(odd) .serviceItem_title::before{
         content: '';
@@ -249,8 +240,16 @@
         bottom: 0;
         background-color: #34bfb7;  
         z-index: -2;
-              
+            
     }
+    .serviceItem:nth-child(odd) .serviceItem_title:hover::after{
+        right: -35px;
+        // width: calc(100% + 35px);
+        // z-index: -1;
+    }
+    
+
+    
 
 }
 
