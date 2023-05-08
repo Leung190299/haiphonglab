@@ -71,6 +71,7 @@ class Loader
 
 
 		Assets::template_css('page-templates/service-page.php', 'service');
+		Assets::template_js('page-templates/service-page.php', 'service');
 		Assets::template_css('page-templates/about-page.php', 'abouts');
 
 

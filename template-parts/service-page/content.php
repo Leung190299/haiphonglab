@@ -15,12 +15,12 @@
 			while ($the_query->have_posts()) : $the_query->the_post();
 		?>
 				<div class="serviceItem">
-					<div class="serviceItem_image box  ">
+					<div class="serviceItem_image ">
 						<a href="<?= get_permalink() ?>">
 							<?= get_the_post_thumbnail() ?>
 						</a>
 					</div>
-					<div class="serviceItem_body box ">
+					<div class="serviceItem_body ">
 						<a href="<?= get_permalink() ?>" class="serviceItem_title">
 							<?= get_the_title() ?>
 						</a>
@@ -42,25 +42,3 @@
 		?>
 	</div>
 </div>
-<script>
-
-	const elements = document.querySelectorAll('.serviceItem_body');
-
-	function fadeInElements() {
-	elements.forEach(element => {
-		const elementTop = element.getBoundingClientRect().top;
-		const elementHeight = element.offsetHeight;
-		const windowHeight = window.innerHeight;
-
-		if (elementTop < windowHeight - elementHeight) {
-		element.style.opacity = '1';
-		}
-	});
-	}
-
-	window.addEventListener('scroll', fadeInElements);
-	window.addEventListener('resize', fadeInElements);
-
-
-	fadeInElements();
-</script>
