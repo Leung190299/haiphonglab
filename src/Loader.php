@@ -13,6 +13,7 @@ class Loader
 		add_action('init', [$this, 'create_post_type']);
 		add_action('wp_ajax_analysis', [$this, 'sreach_analysis']);
 		add_action('wp_ajax_nopriv_analysis', [$this, 'sreach_analysis']);
+		add_action('admin_enqueue_scripts', [$this, 'enqueue_admin']);
 	}
 	public function setup()
 	{
@@ -47,20 +48,22 @@ class Loader
 		);
 	}
 
+	public function enqueue_admin()
+	{
+		Assets::css('admin');
+	}
+
 
 	public function enqueue_assets()
 	{
-		wp_enqueue_style('novanet-theme', get_stylesheet_uri(), [], filemtime(get_template_directory() . '/style.css'));
-		wp_enqueue_style('animation-theme', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+		wp_enqueue_style('hpl-theme', get_stylesheet_uri(), [], filemtime(get_template_directory() . '/style.css'));
+		// Assets::css('animation');
 
-		wp_enqueue_style('magnific-popup', get_template_directory_uri() . '/css/magnific-popup.min.css', [], '1.1.0');
-		wp_enqueue_script('magnific-popup', get_template_directory_uri() . '/js/jquery.magnific-popup.min.js', ['jquery'], '1.1.0', true);
+		// wp_enqueue_style('magnific-popup', get_template_directory_uri() . '/css/magnific-popup.min.css', [], '1.1.0');
+		// wp_enqueue_script('magnific-popup', get_template_directory_uri() . '/js/jquery.magnific-popup.min.js', ['jquery'], '1.1.0', true);
 
-		// wp_enqueue_style( 'slick', get_template_directory_uri() . '/css/slick.css', [], '1.8.1' );
-		// wp_enqueue_script( 'slick', get_template_directory_uri() . '/js/slick.js', [ 'jquery' ], '1.8.1', true );
 
-		// wp_enqueue_script('script', get_template_directory_uri() . '/js/script.js', ['jquery'], '1.0', true);
-		// wp_enqueue_script('wow', 'https://cdn.jsdelivr.net/npm/wowjs@1.1.3/dist/wow.min.js', [], '1.1.3', true);
+		Assets::js('wow');
 		Assets::js('script', ['jquery'], ['url' => admin_url('admin-ajax.php')]);
 
 		//Thêm style cho template
@@ -118,6 +121,7 @@ class Loader
 			'has_archive'        => true,
 			'hierarchical'       => false,
 			'menu_position'      => null,
+			'menu_icon'			=>'dashicons-media-text',
 			'supports'           => ['title', 'author', 'thumbnail', 'custom-fields'],
 		];
 		register_post_type('analysis', $args);
@@ -144,7 +148,7 @@ class Loader
 			],
 		];
 		$analysis = get_posts($args)[0];
-		if(!$analysis){
+		if (!$analysis) {
 			wp_send_json_error('Vui lòng xem lại thông tin. Chúng tôi không tìm thấy thông tin nào như bạn đã nhập');
 			return;
 		};
@@ -152,7 +156,7 @@ class Loader
 			'id' => get_field('analysisId', $analysis->ID),
 			'phone' => get_field('analysisPhone', $analysis->ID),
 			'file' => get_field('analysisFile', $analysis->ID),
-			'name'=>get_the_title($analysis->ID)
+			'name' => get_the_title($analysis->ID)
 		];
 
 		wp_send_json_success($data);

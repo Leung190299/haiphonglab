@@ -13,7 +13,7 @@
     <?php wp_body_open(); ?>
 
     <!-- nội dung header -->
-    <header class="header">
+    <header class="header ">
         <div class="header_top">
             <div class="container">
                 <div class="header_body">

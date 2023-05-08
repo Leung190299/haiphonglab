@@ -1,6 +1,26 @@
 .header {
 	position: relative;
     overflow: hidden;
+	transition: all .5s;
+	top: 0;
+	left: 0;
+	&.fixed{
+		position: fixed;
+		width: 100%;
+		z-index: 1000;
+		animation: fadeInDown .5s ;
+		display: flex;
+		flex-direction: column;
+		.header_bottom{
+			width: 200px;
+			right: 0;
+			top: 200px;
+			margin-left: auto;
+		}
+		.header_itemTitle{
+			display: none;
+		}
+	}
 	svg {
 		height: 100%;
 		width: 100%;
@@ -11,6 +31,8 @@
 	}
 
 	&_bottom {
+		width: 100%;
+		transform: all .5s;
 		@include bg-gradien(90);
 	}
 

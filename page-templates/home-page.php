@@ -11,8 +11,8 @@
 		get_template_part('template-parts/home-page/banner');
 		get_template_part('template-parts/home-page/getTest');
 		get_template_part('template-parts/home-page/service');
-		get_template_part('template-parts/home-page/homePost');
 		get_template_part('template-parts/home-page/partner');
+		get_template_part('template-parts/home-page/homePost');
 
 
 	?>

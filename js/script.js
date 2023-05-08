@@ -26,7 +26,7 @@
       listMadol.forEach((modal) => (modal.style.display = "none"));
       let madolName = this.dataset.modal;
       d.querySelector(`#${madolName}`).style.display = "block";
-    } );
+    });
     btnSearch.addEventListener("click", function () {
       listMadol.forEach((modal) => (modal.style.display = "none"));
       let madolName = this.dataset.modal;
@@ -139,8 +139,8 @@
           context: this,
           success: function (response) {
             //Làm gì đó khi dữ liệu đã được xử lý
-            if ( response.success ) {
-              return showResult(response.data)
+            if (response.success) {
+              return showResult(response.data);
             } else {
               return showMess(response.data);
             }
@@ -156,7 +156,30 @@
       });
     });
   };
+
+  const onScroll = () => {
+    const header = d.querySelector(".header");
+    window.addEventListener("scroll", (e) => {
+      if (window.pageYOffset > header.offsetHeight - 100) {
+        header.classList.add("fixed");
+      } else {
+        header.classList.remove("fixed");
+      }
+    });
+  };
+  const animation = () => {
+    const wow = new WOW( {
+      boxClass: 'wow',      // default
+      animateClass: 'animated', // default
+      offset: 100,          // default
+      mobile: true,       // default
+      live: true
+    } );
+    wow.init();
+  };
   handleMadol();
   menuHandel();
   seachAnalysis();
+  onScroll();
+  animation();
 })(document, jQuery);

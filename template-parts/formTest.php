@@ -1,4 +1,4 @@
-<form class="form">
+<form class="form wow animate__fadeInDown" data-wow-duration="1s">
 	<div class="form-group">
 		<label for="phone">Số điện thoại (*) </label>
 		<input type="text" placeholder="Nhập số điện thoại" class="phone" name="phone" value="">

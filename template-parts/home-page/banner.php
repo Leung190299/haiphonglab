@@ -1,7 +1,7 @@
 <?php
 	 $banners = get_field('banner');
 ?>
-<div class="homeBanner">
+<div class="homeBanner wow animate__fadeInDown" data-wow-duration="1s">
 	<?php
 	foreach($banners as $banner):
 		?>

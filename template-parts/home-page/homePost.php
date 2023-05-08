@@ -1,10 +1,10 @@
 <section class="section">
 	<div class="container">
-			<div class="section_label">
+			<div class="section_label wow animate__fadeInDown" data-wow-duration="1s">
 				<h2 class="label">KIẾN THỨC Y KHOA</h2>
 				<a href="<?= home_url('/') ?>">Xem tất cả</a>
 			</div>
-		<div class="homePost_body section_body">
+		<div class="homePost_body section_body wow animate__fadeInDown" data-wow-duration="1s">
 			<?php
 			$args = [
 				'category_name' => 'kien-thuc-y-khoa',
