@@ -12,21 +12,20 @@
 .serviceItem{
     &_image{
         overflow: hidden;
-        :hover{
-            transition-delay: all 0.1s ease;
+        
+        &:hover{
             box-sizing: border-box;
-            transition: all 1s ease;
+            img{
+                transform: scale(1.1);
+                
+            }             
         }
         img{
             width: 100%;
             height: 100%;
             object-fit: cover;
-
-
+            transition: transform 0.5s ease-out;
         }
-    }
-    &_image:hover img{
-        transform: scale(1.1);
     }
     &_body{
         margin-top: -4px;
@@ -34,9 +33,6 @@
         opacity: 0;
         transition: opacity 0.5s ease-in-out ;
         transition-delay: all 0.5s ease-in-out ;
-
-
-
     }
 
     &_title{
@@ -90,9 +86,7 @@
             &::after{
                 right: 0;
                 transition: right 0.5s ease-in-out;
-
             }
-
         }
     }
     &_des{
@@ -100,6 +94,7 @@
         line-height: 25px;
         font-weight: 400;
         padding: 0 15px;
+        margin-top: 20px;
 
         opacity: 0;
         transform: translateY(50px);
@@ -158,10 +153,10 @@
         &:hover{
             color: white;
             transition: color 0.5s ease-in-out;
-        }
-        &:hover:after{
-            bottom: 0;
-            transition: bottom 0.5s ease-in-out;
+            &:after{
+                bottom: 0;
+                transition: bottom 0.5s ease-in-out;
+            }
         }
     }
 }
@@ -171,10 +166,10 @@
         margin-bottom: 100px;
     }
     .serviceItem{
-        // display: grid;
-        // grid-template-columns: 1fr 1fr;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         justify-content: space-between;
-        display: flex;
+        // display: flex;
         flex-wrap: wrap;
         margin: 40px 0px;
 
@@ -195,17 +190,15 @@
         }
     }
 
-    .serviceItem:nth-child(odd) .serviceItem_image{
+    .serviceItem:nth-child(odd) .serviceItem{
+       &_image{
         order:2;
-    }
-    .serviceItem:nth-child(odd) .serviceItem_body{
+       }
+       &_body{
         order:1;
+       }
     }
-    .box{
-        flex-basis: 50%;
-        box-sizing: border-box;
-
-    }
+    
     .serviceItem:nth-child(even) .serviceItem_title::before{
         content: '';
         position: absolute;
@@ -217,31 +210,22 @@
         background-color: #118aca;
     }
 
-    // .serviceItem:nth-child(even) .serviceItem_title::hover{
-    //     transition: color 0.5s ease-in-out;
-    // }
-    // .serviceItem:nth-child(even) .serviceItem_title:hover::after{
-    //     right: 0;
-    //     transition: right 0.5s ease-in-out;
-    // }
-
-    .serviceItem:nth-child(odd) .serviceItem_title::before{
-        content: '';
-        position: absolute;
-        height: 100%;
-        width: 35px;
-        right: -35px;
-        top: 0;
-        bottom: 0;
-        background-color: #34bfb7;
-        z-index: -2;
-        transition: all .3s .5s ;
-
-    }
-    .serviceItem:nth-child(odd) .serviceItem_title:hover:before{
-
-        background-color: #118aca;
-
+    .serviceItem:nth-child(odd) .serviceItem_title{
+        &:before{
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 35px;
+            right: -35px;
+            top: 0;
+            bottom: 0;
+            background-color: #34bfb7;
+            z-index: -2;
+            transition: all .3s .5s ;
+        }
+        &:hover::after{
+            right: -35px;
+        }
 
     }
 
