@@ -38,3 +38,26 @@ get_header();
 
 <?php
 get_footer();
+?>
+
+<script>
+	const elements = document.querySelectorAll('.search-body');
+
+function fadeInElements() {
+elements.forEach(element => {
+	const elementTop = element.getBoundingClientRect().top;
+	const elementHeight = element.offsetHeight;
+	const windowHeight = window.innerHeight;
+
+	if (elementTop < windowHeight - elementHeight) {
+	element.style.opacity = '1';
+	}
+});
+}
+
+window.addEventListener('scroll', fadeInElements);
+window.addEventListener('resize', fadeInElements);
+
+
+fadeInElements();
+</script>
