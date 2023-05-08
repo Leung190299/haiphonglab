@@ -88,9 +88,7 @@
         }
         &:hover:after{
             right: 0;
-            transition: right 0.5s ease-in-out;
-           
-            
+            transition: right 0.5s ease-in-out;          
         }
     }
     &_des{
@@ -216,14 +214,6 @@
        
     }
 
-    // .serviceItem:nth-child(even) .serviceItem_title::hover{
-    //     transition: color 0.5s ease-in-out;
-    // }
-    // .serviceItem:nth-child(even) .serviceItem_title:hover::after{
-    //     right: 0;
-    //     transition: right 0.5s ease-in-out; 
-    // }
-
     .serviceItem:nth-child(odd) .serviceItem_title::before{
         content: '';
         position: absolute;
@@ -234,7 +224,7 @@
         bottom: 0;
         background-color: #34bfb7;
         z-index: -2;
-              
+            
     }
     .serviceItem:nth-child(odd) .serviceItem_title:hover::after{
         right: -35px;
