@@ -10,6 +10,19 @@
         font-size: 20px;
         margin-top: 15px;
         transition: all 0.5s ease;
+        opacity: 0;
+        transform: translateY(50px);
+        animation: fadeInUp  1s ease-in-out forwards;
+        @keyframes fadeInUp {
+            from{
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to{
+                opacity:1;
+                transform: translateY(0);
+            }
+        }
 
         &:hover{
             color:#1596d2;
@@ -39,16 +52,49 @@
         font-weight: 400;
         line-height: 25px;
         font-size: 1rem;
+        opacity: 0;
+        transform: translateY(50px);
+        animation: fadeInUp  1s ease-in-out forwards;
+        @keyframes fadeInUp {
+            from{
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to{
+                opacity:1;
+                transform: translateY(0);
+            }
+        }
     }
     &_date{
         color:gray;
+        opacity: 0;
+        transform: translateY(50px);
+        animation: fadeInUp  1s ease-in-out forwards;
+        @keyframes fadeInUp {
+            from{
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to{
+                opacity:1;
+                transform: translateY(0);
+            }
+        }
+    }
+}
+@media(min-width:768px){
+    .search-body{
+        margin-bottom: 100px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
 }
 @media(min-width:1024px){
     .search-body{
         margin-bottom: 100px;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
     }
     .postItem{
         &_image{
