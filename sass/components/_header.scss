@@ -32,7 +32,7 @@
 
 	&_bottom {
 		width: 100%;
-		transform: all .5s;
+		transition: all .5s;
 		@include bg-gradien(90);
 	}
 

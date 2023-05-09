@@ -177,9 +177,13 @@
     } );
     wow.init();
   };
+
+
   handleMadol();
   menuHandel();
   seachAnalysis();
   onScroll();
   animation();
+
+
 })(document, jQuery);

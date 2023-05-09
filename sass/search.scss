@@ -3,7 +3,6 @@
     text-transform: uppercase;
 }
 .postItem{
-    margin: 15px;
     &_title{
         color: black;
         font-weight: bold;
@@ -39,16 +38,27 @@
         font-weight: 400;
         line-height: 25px;
         font-size: 1rem;
+        display: none;
+        @media (min-width:768px) {
+            display: block;
+        }
     }
     &_date{
         color:gray;
     }
 }
-@media(min-width:1024px){
+.search-body{
+    margin-bottom: 100px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    @media (min-width:768px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (min-width:1024px){
     .search-body{
-        margin-bottom: 100px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(3, 1fr);
     }
     .postItem{
         &_image{

@@ -61,7 +61,7 @@ foreach ($category_detail as $cd) {
 
 			<?php endif ?>
 			<div class="single_content">
-				<?= get_the_content() ?>
+				<?php the_content()  ?>
 			</div>
 			<div class="single_comment">
 				<div class="fb-comments" data-href="<?= home_url('/') ?>" data-width="100%" data-numposts="5"></div>
@@ -94,5 +94,6 @@ foreach ($category_detail as $cd) {
 	</div>
 </div>
 </div>
+
 
 <?php get_footer(); ?>

@@ -10,7 +10,7 @@
         <h1 class="archive_title"><?= $obj->name ?></h1>
         <div class="container">
 
-            <div class="archive_content">
+            <div class="<?= $obj->slug == "video" ? "archive_video" : "archive_content"  ?> ">
 
                 <?php
 
@@ -19,8 +19,11 @@
                         <?php
                         while (have_posts()) :
                             the_post();
-
-                            get_template_part("template-parts/content");
+                            if ($obj->slug === "video") {
+                                get_template_part("template-parts/content",'video');
+                            } else {
+                                get_template_part("template-parts/content");
+                            }
 
 
                         ?>
@@ -30,7 +33,8 @@
                 <?php else : ?>
                     <?php get_template_part('template-parts/content/none'); ?>
                 <?php endif; ?>
-                <?php get_sidebar() ?>
+
+                <?php $obj->slug !== "video" ? get_sidebar() : null ?>
             </div>
         </div>
     </div>
