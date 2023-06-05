@@ -19,6 +19,11 @@
                 <div class="header_body">
                     <div class="header_logo">
                         <?php the_custom_logo() ?>
+                        <?php if (is_home()) : ?>
+                            <h1 class="header_logoName">Haiphonglab</h1>
+                        <?php else :  ?>
+                            <p class="header_logoName">Haiphonglab</p>
+                        <?php endif; ?>
                     </div>
                     <div class="header_menu">
                         <?php
@@ -29,11 +34,14 @@
                         <div class="header_search">
                             <button class="btnSeach" data-modal="search"><?php Template_function::getIcon('search') ?></button>
                         </div>
+                        <select class="language">
+                            <option value="VIE" selected>VIE</option>
+                            <option value="ENG">ENG</option>
+                        </select>
                         <button id="btnMenu" class="btnMenu">
                             <span></span>
                         </button>
                         <button id="btnClose" class="btnClose">
-
                         </button>
                     </div>
                 </div>
@@ -65,7 +73,7 @@
                             <div class="header_itemIcon">
                                 <?php Template_function::getIcon('phone') ?>
                             </div>
-                            <div class="header_itemTitle">HOTLINE: <?= get_field('phone','option')?></div>
+                            <div class="header_itemTitle">HOTLINE: <?= get_field('phone', 'option') ?></div>
                         </button>
                     </div>
                 </div>
@@ -73,7 +81,7 @@
         </div>
         <div class="modal">
             <div class="modal_body">
-            <div id="search" class="modal_content">
+                <div id="search" class="modal_content">
                     <?= get_search_form() ?>
                 </div>
                 <div id="formTest" class="modal_content">
@@ -86,20 +94,20 @@
                     <?php get_template_part('template-parts/contact'); ?>
                 </div>
                 <div id="phoneContact" class="modal_content">
-                        <div class="phoneContact">
-                            <div class="phoneContact_content">
-                                <div class="phoneContact_item">
-                                    <div class="phoneContact_label">Hotline tư vấn</div>
-                                    <div class="phoneContact_value"><a href="tel:<?= get_field('phone','option')?>"> <?= get_field('phone','option')?></a></div>
-                                </div>
-                                <div class="phoneContact_item">
-                                    <div class="phoneContact_label">Số điện thoại thường trực</div>
-                                    <div class="phoneContact_value"><a href="tel:<?= get_field('phone2','option')?>"> <?= get_field('phone2','option')?></a></div>
-                                </div>
+                    <div class="phoneContact">
+                        <div class="phoneContact_content">
+                            <div class="phoneContact_item">
+                                <div class="phoneContact_label">Hotline tư vấn</div>
+                                <div class="phoneContact_value"><a href="tel:<?= get_field('phone', 'option') ?>"> <?= get_field('phone', 'option') ?></a></div>
                             </div>
-                            <div class="phoneContact_note">Hãy bấm vào số điện thoại để gọi nhanh cho chúng tôi.</div>
-                        <button class="btn" id="btnClone">Đóng</button>
+                            <div class="phoneContact_item">
+                                <div class="phoneContact_label">Số điện thoại thường trực</div>
+                                <div class="phoneContact_value"><a href="tel:<?= get_field('phone2', 'option') ?>"> <?= get_field('phone2', 'option') ?></a></div>
+                            </div>
                         </div>
+                        <div class="phoneContact_note">Hãy bấm vào số điện thoại để gọi nhanh cho chúng tôi.</div>
+                        <button class="btn" id="btnClone">Đóng</button>
+                    </div>
                 </div>
                 <div id="map" class="modal_content">
                     <?= get_field('map', 'option') ?>

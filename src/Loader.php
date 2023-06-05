@@ -64,7 +64,10 @@ class Loader
 
 
 		Assets::js('wow');
-		Assets::js('script', ['jquery'], ['url' => admin_url('admin-ajax.php')]);
+		Assets::js('script', ['jquery'], [
+			'url' => admin_url('admin-ajax.php'),
+			'homeUrl'=>home_url('/'),
+	]);
 
 		//Thêm style cho template
 		Assets::template_css('page-templates/home-page.php', 'home');

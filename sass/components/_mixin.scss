@@ -1,6 +1,6 @@
 
 @mixin bg-gradien($deg){
-    background: linear-gradient(#{$deg}deg, rgba(17, 137, 202, 1) 0%, rgba(53, 193, 182, 1) 100%);
+    background: linear-gradient(#{$deg}deg, rgba(17, 137, 202, 1) -20%, #2ae818 80%);
 }
 @mixin iconBg($top,$left,$width, $height,$link ){
     position: absolute;

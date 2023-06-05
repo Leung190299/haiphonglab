@@ -4,6 +4,7 @@
 	transition: all .5s;
 	top: 0;
 	left: 0;
+
 	&.fixed{
 		position: fixed;
 		width: 100%;
@@ -45,6 +46,29 @@
 
 	&_logo {
 		max-width: 300px;
+		display: flex;
+		align-items: center;
+		img{
+			width: 80px;
+		}
+		@media (max-width:480px) {
+			flex-direction: column;
+			img{
+				width: 50px;
+			}
+			.header_logoName{
+			font-size: $fontSize;
+			margin-left: 0;
+			}
+		}
+	}
+	&_logoName{
+		margin: 0;
+		margin-left: $fontSize;
+		padding: 0;
+		font-size: calc($fontSize + 6px);
+		font-weight: bold;
+		text-transform: uppercase;
 	}
 
 	&_menu {
@@ -131,6 +155,9 @@
 
 	&_itemTitle {
 		font-size: calc($fontSize - 2px);
+	}
+	.language{
+		width: fit-content;
 	}
 }
  .btnMenu{

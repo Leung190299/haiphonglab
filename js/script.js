@@ -1,4 +1,21 @@
-((d, $) => {
+( ( d, $ ) => {
+
+  const getLanguage =()=> {
+    let url = window.location.href;
+    $( '.language' ).on( 'change', function() {
+      let valueSelected = this.value;
+      if ( valueSelected === 'ENG' ) {
+        window.location.href = `${script.homeUrl}/en`;
+      } else {
+        window.location.href = script.homeUrl;
+      }
+    } );
+    if ( url.includes( '/en' ) ) {
+      $( '.language' ).val( 'ENG' );
+    } else {
+      $( '.language' ).val( 'VIE' );
+    }
+  }
   const handleMadol = () => {
     const listMenu = d.querySelectorAll(".header_item");
     const madol = d.querySelector(".modal");
@@ -178,7 +195,7 @@
     wow.init();
   };
 
-
+  getLanguage();
   handleMadol();
   menuHandel();
   seachAnalysis();
